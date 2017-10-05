@@ -18,7 +18,7 @@ public class GreedyKing extends JFrame {
     
     public void initUI(){
         add(new Board());
-        setSize(372,228);
+        setSize(272*4+16,128*4+39);
         setTitle("Greedy King");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
