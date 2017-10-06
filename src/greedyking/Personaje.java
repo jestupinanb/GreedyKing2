@@ -20,6 +20,8 @@ public class Personaje {
         private int unidadAltoImagenOriginal = 22;
         private int posicionX = 8*escala;
         private int posicionY = 75*escala;
+        private int numImagen = 0;//numero de animaciones
+        private int[][] animacion = {{6,2},{107,26},{132,26},{155,26},{181,26}};
         private Image pjImage;
         
         public Personaje(){
@@ -27,19 +29,31 @@ public class Personaje {
         };
         
         public void moveRight(){
-            this.posicionX += 1;
+            this.posicionX += 1*escala;
+            this.numImagen +=1;
+            if(this.numImagen==4){
+                this.numImagen = 0;
+            };
         }
         
+        public int numeroDeImagenAncho(){
+            return animacion[this.numImagen][0];
+        };
+        
+        public int numeroDeImagenAlto(){
+            return animacion[this.numImagen][1];
+        };
+        
         public void moveLeft(){
-            this.posicionX -= 1;
+            this.posicionX -= 1*escala;
         }
         
         public void moveUP(){
-            this.posicionY -= 1;
+            this.posicionY -= 1*escala;
         }
         
         public void moveDown(){
-            this.posicionY += 1;
+            this.posicionY += 1*escala;
         }
         
         public void setPosicionX(int posicionX) {

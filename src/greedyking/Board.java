@@ -28,6 +28,7 @@ public class Board extends JPanel implements ActionListener {
     private int delay = 30;
     Personaje personaje;
     private Timer timer;
+    int[] fondoInt1 = {5,6};
     
     
     public Board() {
@@ -39,6 +40,7 @@ public class Board extends JPanel implements ActionListener {
     }
     
     private class EventosTeclado extends KeyAdapter {
+        
         @Override
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
@@ -57,6 +59,23 @@ public class Board extends JPanel implements ActionListener {
                     break;
             };
         };
+        public void keyReleased(KeyEvent e){
+            int key = e.getKeyCode();
+            switch (key){
+                case KeyEvent.VK_D:
+//                    personaje.moveRight();
+                    break;
+                case KeyEvent.VK_A:
+//                    personaje.moveLeft();
+                    break;
+                case KeyEvent.VK_W:
+//                    personaje.moveUP();
+                    break;
+                case KeyEvent.VK_S:
+//                    personaje.moveDown();
+                    break;
+            };
+        }
     }
     
     @Override
@@ -78,12 +97,11 @@ public class Board extends JPanel implements ActionListener {
         Image image = ii.getImage();
         return image;
     };
-    
     public void mapa1(Graphics g){
         int mapa[][][] ={
             {{5,6,10,3},{-1,-1,11,3},{-1,-1,11,3},{5,6,12,3},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,5,6},{5,6,3,1},{5,6,4,1},{5,6,5,1},{5,6,6,1},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6}},
             {{-1,-1,5,6},{5,6,0,4},{5,6,1,4},{5,6,2,4},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,2,2},{5,6,3,2},{5,6,4,2},{5,6,5,2},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6}},
-            {{-1,-1,5,6},{-1,-  1,5,6},{5,6,1,5},{5,6,2,5},{-1,-1,5,6},{5,6,10,1},{-1,-1,11,1},{5,6,12,1},{-1,-1,5,6},{5,6,2,3},{5,6,3,3},{5,6,4,3},{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6},{5,6,12,6},{-1,-1,11,9}},
+            {{-1,-1,5,6},{-1,-1,5,6},{5,6,1,5},{5,6,2,5},{-1,-1,5,6},{5,6,10,1},{-1,-1,11,1},{5,6,12,1},{-1,-1,5,6},{5,6,2,3},{5,6,3,3},{5,6,4,3},{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6},{5,6,12,6},{-1,-1,11,9}},
             {{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6},{5,6,12,6},{5,6,12,6},{12,7,10,2},{-1,-1,11,2},{5,6,12,2},{-1,-1,5,6},{5,6,7,2},{5,6,3,4},{5,6,7,2},{5,6,7,2},{5,6,11,6},{-1,-1,11,9},{-1,-1,12,7},{-1,-1,12,7}},
             {{-1,-1,5,6},{-1,-1,5,6},{5,6,11,7},{-1,-1,12,7},{-1,-1,12,7},{12,7,10,2},{-1,-1,11,2},{5,6,12,2},{5,6,7,2},{-1,-1,5,6},{5,6,3,5},{5,6,4,5},{-1,-1,5,6},{5,6,11,7},{-1,-1,12,7},{-1,-1,12,7},{12,7,10,1}},
             {{-1,-1,5,6},{-1,-1,5,6},{5,6,11,7},{-1,-1,12,7},{12,7,10,1},{-1,-1,11,1},{-1,-1,11,1},{-1,-1,11,1},{5,6,12,1},{-1,-1,5,6},{5,6,3,6},{5,6,4,6},{-1,-1,5,6},{12,7,10,1},{-1,-1,11,1},{-1,-1,11,1},{-1,-1,11,2}},
@@ -108,6 +126,6 @@ public class Board extends JPanel implements ActionListener {
         g.drawRect(this.personaje.getPosicionX(), this.personaje.getPosicionY(), this.personaje.getUnidadAnchoRun(),this.personaje.getUnidadAltoRun());
         Rectangle carro = new Rectangle(this.personaje.getPosicionX(),this.personaje.getPosicionY(),this.personaje.getUnidadAnchoRun(),this.personaje.getUnidadAltoRun());
         g.drawImage(this.personaje.getPjImage(),this.personaje.getPosicionX(),this.personaje.getPosicionY(),this.personaje.getPosicionX()+this.personaje.getUnidadAnchoRun(),this.personaje.getPosicionY()+this.personaje.getUnidadAltoRun(),
-                6,2,6+this.personaje.getUnidadAnchoImagenOriginal(),2+this.personaje.getUnidadAltoImagenOriginal(), this);
+                this.personaje.numeroDeImagenAncho(),this.personaje.numeroDeImagenAlto(),this.personaje.numeroDeImagenAncho()+this.personaje.getUnidadAnchoImagenOriginal(),this.personaje.numeroDeImagenAlto()+this.personaje.getUnidadAltoImagenOriginal(), this);//6,2
     };
 }
