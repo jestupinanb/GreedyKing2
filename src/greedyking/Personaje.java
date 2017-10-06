@@ -21,7 +21,7 @@ public class Personaje {
         private int posicionX = 8*escala;
         private int posicionY = 75*escala;
         private int numImagen = 0;//numero de animaciones
-        private int[][] animacion = {{6,2},{107,26},{132,26},{155,26},{181,26}};
+        private int[][] animacion = {{6,2},{108,26},{132,26},{155,26},{181,26}};
         private Image pjImage;
         
         public Personaje(){
