@@ -24,7 +24,7 @@ public class Personaje {
         private int[][] animacion = {//Matriz con las posiciones para la animacion del personaje
                 {5,2}//No se mueve
                 ,{106,27},{131,27},{156,27},{181,27}//movimiento a la derecha
-        };
+        };//kk
         private Image pjImage;
         
         public Personaje(int escala){

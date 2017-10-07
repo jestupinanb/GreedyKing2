@@ -32,9 +32,8 @@ public class Board extends JPanel implements ActionListener {
     
     
     public Board() {
+        this.personaje = new Personaje(scale);
         timer = new Timer(this.delay,this);
-        this.personaje = new Personaje();
-        this.personaje.setScale(scale);
         setFocusable(true);
         addKeyListener(new EventosTeclado());
         timer.start();
@@ -89,7 +88,6 @@ public class Board extends JPanel implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-//        System.out.println("hola");
         repaint();
     }
     
