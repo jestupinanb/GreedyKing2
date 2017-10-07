@@ -29,7 +29,7 @@ public class Personaje {
         
         public Personaje(int escala){
             this.pjImage = loadImage("Animacion Pj.png");
-            this.scale = 4;
+            this.scale = escala;
             this.unidadAnchoRun = 17*this.scale;
             this.unidadAltoRun = 22*this.scale;
             this.unidadAnchoImagenOriginal = 17;
