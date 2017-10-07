@@ -63,7 +63,7 @@ public class Board extends JPanel implements ActionListener {
             int key = e.getKeyCode();
             switch (key){
                 case KeyEvent.VK_D:
-//                    personaje.moveRight();
+                    personaje.sinMovimiento();
                     break;
                 case KeyEvent.VK_A:
 //                    personaje.moveLeft();
@@ -98,8 +98,10 @@ public class Board extends JPanel implements ActionListener {
     };
     
     public void mapa1(Graphics g){
+        int[] fondoVerde = {5,6};
+        int[] sinFondo = {-1,-1};
         int mapa[][][] ={//Crea una matriz donde donde los primeros dos datos indican si se tiene fondo, si no se tiene se coloca -1, si se tiene se introducen las coordenadas del fondo, los dos datos siguientes son las coordendas que van sobre el fondo en caso de que haya, si no hay simplemente pone la imagen
-            {{5,6,10,3},{-1,-1,11,3},{-1,-1,11,3},{5,6,12,3},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,5,6},{5,6,3,1},{5,6,4,1},{5,6,5,1},{5,6,6,1},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6}},
+            {{fondoVerde[0],fondoVerde[1],10,3},{sinFondo[0],sinFondo[1],11,3},{-1,-1,11,3},{5,6,12,3},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,5,6},{5,6,3,1},{5,6,4,1},{5,6,5,1},{5,6,6,1},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6}},
             {{-1,-1,5,6},{5,6,0,4},{5,6,1,4},{5,6,2,4},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,2,2},{5,6,3,2},{5,6,4,2},{5,6,5,2},{-1,-1,5,6},{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6},{5,6,11,6}},
             {{-1,-1,5,6},{-1,-1,5,6},{5,6,1,5},{5,6,2,5},{-1,-1,5,6},{5,6,10,1},{-1,-1,11,1},{5,6,12,1},{-1,-1,5,6},{5,6,2,3},{5,6,3,3},{5,6,4,3},{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6},{5,6,12,6},{-1,-1,11,9},{-1,-1,11,9}},
             {{-1,-1,5,6},{-1,-1,5,6},{5,6,11,6},{5,6,12,6},{5,6,12,6},{12,7,10,2},{-1,-1,11,2},{5,6,12,2},{-1,-1,5,6},{5,6,7,2},{5,6,3,4},{5,6,7,2},{5,6,7,2},{5,6,11,6},{-1,-1,11,9},{-1,-1,12,7},{-1,-1,12,7},{-1,-1,12,7}},

@@ -47,6 +47,10 @@ public class Personaje {
             };
         }
         
+        public void sinMovimiento(){
+            this.numImagen = 0;
+        };
+        
         public int numeroDeImagenAncho(){
             return animacion[this.numImagen][0];
         };
