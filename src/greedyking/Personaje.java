@@ -13,15 +13,18 @@ import javax.swing.ImageIcon;
  * @author Jaime
  */
 public class Personaje {
-            private int escala = 4;
-        private int unidadAnchoRun = 17*escala;
-        private int unidadAltoRun = 22*escala;
+        private int scale = 4;
+        private int unidadAnchoRun = 17*scale;
+        private int unidadAltoRun = 22*scale;
         private int unidadAnchoImagenOriginal = 17;
         private int unidadAltoImagenOriginal = 22;
-        private int posicionX = 8*escala;
-        private int posicionY = 75*escala;
+        private int posicionX = 8*scale;
+        private int posicionY = 75*scale;
         private int numImagen = 0;//numero de animaciones
-        private int[][] animacion = {{6,2},{108,26},{132,26},{155,26},{181,26}};
+        private int[][] animacion = {//Matriz con las posiciones para la animacion del personaje
+                {5,2}//No se mueve
+                ,{106,27},{131,27},{156,27},{181,27}//movimiento a la derecha
+        };
         private Image pjImage;
         
         public Personaje(){
@@ -29,10 +32,10 @@ public class Personaje {
         };
         
         public void moveRight(){
-            this.posicionX += 1*escala;
+            this.posicionX += 1*scale;
             this.numImagen +=1;
-            if(this.numImagen==4){
-                this.numImagen = 0;
+            if(this.numImagen==5){
+                this.numImagen = 1;
             };
         }
         
@@ -45,15 +48,15 @@ public class Personaje {
         };
         
         public void moveLeft(){
-            this.posicionX -= 1*escala;
+            this.posicionX -= 1*scale;
         }
         
         public void moveUP(){
-            this.posicionY -= 1*escala;
+            this.posicionY -= 1*scale;
         }
         
         public void moveDown(){
-            this.posicionY += 1*escala;
+            this.posicionY += 1*scale;
         }
         
         public void setPosicionX(int posicionX) {
@@ -96,5 +99,9 @@ public class Personaje {
         ImageIcon ii = new ImageIcon(imageName);
         Image image = ii.getImage();
         return image;
+        };
+        
+        public void setScale(int scale){//Le asigna un valor a la escala
+            this.scale = scale;
         };
     };
