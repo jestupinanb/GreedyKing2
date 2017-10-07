@@ -13,22 +13,30 @@ import javax.swing.ImageIcon;
  * @author Jaime
  */
 public class Personaje {
-        private int scale = 4;
-        private int unidadAnchoRun = 17*scale;
-        private int unidadAltoRun = 22*scale;
-        private int unidadAnchoImagenOriginal = 17;
-        private int unidadAltoImagenOriginal = 22;
-        private int posicionX = 8*scale;
-        private int posicionY = 75*scale;
-        private int numImagen = 0;//numero de animaciones
+        private int scale;
+        private int unidadAnchoRun;
+        private int unidadAltoRun;
+        private int unidadAnchoImagenOriginal;
+        private int unidadAltoImagenOriginal;
+        private int posicionX;
+        private int posicionY;
+        private int numImagen;//numero de animaciones
         private int[][] animacion = {//Matriz con las posiciones para la animacion del personaje
                 {5,2}//No se mueve
                 ,{106,27},{131,27},{156,27},{181,27}//movimiento a la derecha
         };
         private Image pjImage;
         
-        public Personaje(){
+        public Personaje(int escala){
             this.pjImage = loadImage("Animacion Pj.png");
+            this.scale = 4;
+            this.unidadAnchoRun = 17*this.scale;
+            this.unidadAltoRun = 22*this.scale;
+            this.unidadAnchoImagenOriginal = 17;
+            this.unidadAltoImagenOriginal = 22;
+            this.posicionX = 8*this.scale;
+            this.posicionY = 75*this.scale;
+            this.numImagen = 0;
         };
         
         public void moveRight(){
@@ -99,9 +107,5 @@ public class Personaje {
         ImageIcon ii = new ImageIcon(imageName);
         Image image = ii.getImage();
         return image;
-        };
-        
-        public void setScale(int scale){//Le asigna un valor a la escala
-            this.scale = scale;
         };
     };
