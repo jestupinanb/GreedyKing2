@@ -22,7 +22,7 @@ import javax.swing.Timer;
  * @author Jaime
  */
 public class Board extends JPanel implements ActionListener {
-    private int scale = 1;//El tamaño al que se aumenta el juego 1 = originial, 2 = al doble de grande, 3 = triple de grande etc...
+    private int scale = 4;//El tamaño al que se aumenta el juego 1 = originial, 2 = al doble de grande, 3 = triple de grande etc...
     private int unidadMapaOriginal = 16;//El tile del mapa esta dividido en cuadros de 16x16
     private int unidadMapaGrande = 16*scale;//Tamaño que va a terner el juego al ejecutarse
     private int delay = 50;
