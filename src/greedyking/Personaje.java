@@ -35,15 +35,18 @@ public class Personaje {
             this.unidadAnchoImagenOriginal = 17;
             this.unidadAltoImagenOriginal = 22;
             this.posicionX = 8*this.scale;
-            this.posicionY = 75*this.scale;
+            this.posicionY = 70*this.scale;
             this.numImagen = 0;
         };
         
         public void moveRight(){
             this.posicionX += 1*scale;
+            if(this.posicionX%10==0){
             this.numImagen +=1;
             if(this.numImagen==5){
                 this.numImagen = 1;
+            };
+                System.out.println("Num Imagen"+this.numImagen);
             };
         }
         
@@ -76,7 +79,7 @@ public class Personaje {
         }
 
         public void setPosicionY(int posicionY) {
-            this.posicionY = posicionY;
+            this.posicionY = posicionY-this.getUnidadAltoRun();
         }
         
         public int getUnidadAnchoRun() {
